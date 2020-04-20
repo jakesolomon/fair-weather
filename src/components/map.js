@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import ReactDOM from "react-dom";
 import { Graticule, ComposableMap, Geographies, Geography } from "react-simple-maps";
 
-import './map.css';
+import '../App.css';
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
 
@@ -46,11 +46,11 @@ class Map extends Component {
     );
 
     return (
-      <div className="map">
+      <span className="map">
         <ComposableMap projection="geoAlbersUsa">
         {geographies}
         </ComposableMap>
-      </div>
+      </span>
     );
   }
 }

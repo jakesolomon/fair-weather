@@ -1,6 +1,5 @@
 .App {
   position: relative;
-  display: inline-flex;
   font-family: sans-serif;
   height: 90vh;
   width: 100vw;
@@ -11,7 +10,23 @@
 .text {
   padding: 2em;
   position: relative;
-  max-width: 30vw;
+  width: 30vw;
+  min-width: 300px;
+  background: "#EEE";
+}
+
+svg {
+  vertical-align: middle;
+  max-height: 75vh;
+}
+
+.map {
+  position: absolute;
+  top: 80px;
+  right: 10vw;
+  width: 40vw;
+  font-family: sans-serif;
+  text-align: center;
 }
 
 h1 {
@@ -22,10 +37,25 @@ p {
   line-height: 1.3em;
 }
 
+@media only screen and (max-width: 1000px) {
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+  .App {
+    align-items: center;
+    align-content: center;
+  }
+
+  .text {
+    padding: 1em;
+    top: 0px;
+    width: 90vw;
+  }
+
+  .map {
+    position: absolute;
+    top: 40vh;
+    right: 15vw;
+    width: 70vw;
+  }
 }
 
 @media (prefers-reduced-motion: no-preference) {
