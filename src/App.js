@@ -8,7 +8,7 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      highlightedStates: null
+      highlightedStates: [48, 22, 49]
     };
   }
 
@@ -31,7 +31,9 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-      <Map/>
+        <h1>The Good Weather Map</h1>
+        <p>A map of the US that only shows states that are currently sunny and in the 70's</p>
+        <Map highlight={this.state.highlightedStates} />
       </div>
     );
   }
