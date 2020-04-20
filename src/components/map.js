@@ -47,9 +47,9 @@ class Map extends Component {
 
     return (
       <div className="map">
-      <ComposableMap projection="geoAlbersUsa">
-      {geographies}
-      </ComposableMap>
+        <ComposableMap projection="geoAlbersUsa">
+        {geographies}
+        </ComposableMap>
       </div>
     );
   }

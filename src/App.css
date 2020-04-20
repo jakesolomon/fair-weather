@@ -1,11 +1,27 @@
 .App {
-  text-align: center;
-  height: 95vh;
+  position: relative;
+  display: inline-flex;
+  font-family: sans-serif;
+  height: 90vh;
+  width: 100vw;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
   font-size: calc(10px + 2vmin);
 }
+
+.text {
+  padding: 2em;
+  position: relative;
+  max-width: 30vw;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  line-height: 1.3em;
+}
+
 
 .App-logo {
   height: 40vmin;

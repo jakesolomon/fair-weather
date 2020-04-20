@@ -31,8 +31,14 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <h1>The Good Weather Map</h1>
-        <p>A map of the US that only shows states that are currently sunny and in the 70's</p>
+        <div className="text">
+          <h1>The Good Weather Map</h1>
+          <p>A map of the US that only shows states that are currently sunny and
+          in the 70's.<br/><br/>
+          The Good Weather Map uses the <a href="https://openweathermap.org/">
+          OpenWeather API</a> to find what states are nice right now, and displays
+          them using <a href="https://www.react-simple-maps.io/">React Simple Maps</a>.</p>
+        </div>
         <Map highlight={this.state.highlightedStates} />
       </div>
     );
