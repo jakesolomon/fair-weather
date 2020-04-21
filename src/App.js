@@ -19,7 +19,7 @@ class App extends Component {
     var skiesAreClear;
     stateCoordinates.items.forEach(state => {
       if (true) {
-        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${state.latitude}&lon=${state.longitude}&appid=1e8fc8de2dcb07edbb832f5aec609e1a`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${state.latitude}&lon=${state.longitude}&appid=1e8fc8de2dcb07edbb832f5aec609e1a`)
         .then(response => response.json())
         .then(response => {
           console.log(response);
