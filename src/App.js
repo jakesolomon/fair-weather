@@ -4,29 +4,36 @@ import './App.css';
 
 import Map from './components/map.js';
 
+import stateCoordinates from './data/stateCoordinates.json';
+
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      highlightedStates: [48, 22, 49]
+      highlightedStates: []
     };
   }
 
-  // componentDidMount() {
-  //   fetch("https://community-open-weather-map.p.rapidapi.com/weather?callback=test&id=2172797&units=%2522metric%2522%20or%20%2522imperial%2522&mode=xml%252C%20html&q=London%252Cuk", {
-  //   	"method": "GET",
-  //   	"headers": {
-  //   		"x-rapidapi-host": "community-open-weather-map.p.rapidapi.com",
-  //   		"x-rapidapi-key": "428321991cmsh2446fdc7261ff64p136d20jsn11609dc86cab"
-  //   	}
-  //   })
-  //   .then(response => {
-  //   	console.log(response);
-  //   })
-  //   .catch(err => {
-  //   	console.log(err);
-  //   });
-  // }
+  componentDidMount() {
+    var temp;
+    var skiesAreClear;
+    stateCoordinates.items.forEach(state => {
+      if (true) {
+        fetch(`http://api.openweathermap.org/data/2.5/weather?lat=${state.latitude}&lon=${state.longitude}&appid=1e8fc8de2dcb07edbb832f5aec609e1a`)
+        .then(response => response.json())
+        .then(response => {
+          console.log(response);
+          temp = parseInt((response.main.temp - 273.15) * 9 / 5 + 32);
+          skiesAreClear = (response.clouds.all < 30);
+          if (temp >= 70 && temp < 80 && skiesAreClear)
+            this.setState({
+              highlightedStates: this.state.highlightedStates.concat(state.val)
+            });
+        })
+        .catch(error => console.error(error));
+      }
+    });
+  }
 
   render() {
     return (
@@ -36,7 +43,7 @@ class App extends Component {
           <p>A map of the US that only shows states that are currently sunny and
           in the 70's.<br/><br/>
           The Good Weather Map uses the <a href="https://openweathermap.org/">
-          OpenWeather API</a> to find what states are nice right now, and displays
+          OpenWeather API</a> to find what states are nice right now, and highlights them
           them using <a href="https://www.react-simple-maps.io/">React Simple Maps</a>.</p>
         </div>
         <Map highlight={this.state.highlightedStates} />

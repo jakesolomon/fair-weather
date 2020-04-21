@@ -6,7 +6,7 @@ import '../App.css';
 
 const geoUrl = "https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json";
 
-// import coordinates
+// State coordinates
 // https://www.latlong.net/category/states-236-14.html
 
 class Map extends Component {
@@ -16,13 +16,6 @@ class Map extends Component {
 
     };
   }
-
-
-  // componentDidMount() {
-  //   fetch("https://cdn.jsdelivr.net/npm/us-atlas@3/states-10m.json")
-  //   .then(response => response.json())
-  //   .then(response => console.log(response));
-  // }
 
   render() {
 
