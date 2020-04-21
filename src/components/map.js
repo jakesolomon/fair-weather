@@ -27,7 +27,7 @@ class Map extends Component {
   render() {
 
     var colors = new Array(57);
-    colors.fill("#EEE");
+    colors.fill("#DDD");
 
     this.props.highlight.forEach(id => colors[id] = "#AEA");
 
@@ -37,7 +37,7 @@ class Map extends Component {
       geographies.map(geo =>
         <Geography
         key={geo.rsmKey}
-        stroke="#DDD"
+        stroke="#BFBFBF"
         geography={geo}
         fill={colors[parseInt(geo.id)]}
         />)
@@ -46,11 +46,11 @@ class Map extends Component {
     );
 
     return (
-      <span className="map">
+      <div className="map">
         <ComposableMap projection="geoAlbersUsa">
         {geographies}
         </ComposableMap>
-      </span>
+      </div>
     );
   }
 }

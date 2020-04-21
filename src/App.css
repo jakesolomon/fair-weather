@@ -1,32 +1,36 @@
 .App {
   position: relative;
   font-family: sans-serif;
-  height: 90vh;
-  width: 100vw;
+  height: 90%;
+  width: 100%;
   flex-direction: column;
   font-size: calc(10px + 2vmin);
 }
 
 .text {
-  padding: 2em;
   position: relative;
-  width: 30vw;
+  padding: 6% 12%;
+  width: 30%;
   min-width: 300px;
   background: "#EEE";
 }
 
-svg {
-  vertical-align: middle;
-  max-height: 75vh;
-}
-
 .map {
   position: absolute;
-  top: 80px;
-  right: 10vw;
-  width: 40vw;
-  font-family: sans-serif;
-  text-align: center;
+  height: 100%;
+  top: 0px;
+  bottom: 0px;
+  margin: auto 0px;
+  right: 10%;
+  width: 40%;
+}
+
+svg {
+  height: 100%;
+  width: 100%;
+  top: 0px;
+  bottom: 0px;
+  margin: auto 0px;
 }
 
 h1 {
@@ -37,24 +41,33 @@ p {
   line-height: 1.3em;
 }
 
-@media only screen and (max-width: 1000px) {
+@media only screen and (max-width: 1150px) {
 
   .App {
+    width: 100%;
     align-items: center;
     align-content: center;
   }
 
   .text {
-    padding: 1em;
+    position: relative;
+    padding: 0px 0px;
     top: 0px;
-    width: 90vw;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+    width: 80%;
   }
 
   .map {
-    position: absolute;
-    top: 40vh;
-    right: 15vw;
-    width: 70vw;
+    position: relative;
+    padding: 0px 0px;
+    top: 0px;
+    right: 0px;
+    left: 0px;
+    margin: auto;
+    width: 70%;
+    max-width: 500px;
   }
 }
 
