@@ -30,6 +30,7 @@ class Map extends Component {
       geographies.map(geo =>
         <Geography
         key={geo.rsmKey}
+        class="stateSVG"
         stroke="#BFBFBF"
         geography={geo}
         fill={colors[parseInt(geo.id)]}
@@ -39,10 +40,12 @@ class Map extends Component {
     );
 
     return (
-      <div className="map">
-        <ComposableMap projection="geoAlbersUsa">
-        {geographies}
-        </ComposableMap>
+      <div>
+        <div className="map">
+          <ComposableMap projection="geoAlbersUsa">
+          {geographies}
+          </ComposableMap>
+        </div>
       </div>
     );
   }

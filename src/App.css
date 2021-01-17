@@ -33,6 +33,14 @@ svg {
   margin: auto 0px;
 }
 
+.stateSVG:focus {
+  outline: none;
+}
+
+.stateSVG:hover {
+  fill: #AEA;
+}
+
 h1 {
   text-align: center;
 }
