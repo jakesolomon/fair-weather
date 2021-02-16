@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7df7060e24f6852ebdf13e9703f7279a",
+    "revision": "89cbe63a16bb2bd8a7370490ea05649c",
     "url": "/fair-weather/index.html"
   },
   {
-    "revision": "37817d262d3700ac2743",
-    "url": "/fair-weather/static/css/main.cc40fdec.chunk.css"
+    "revision": "aedfb2f2517e9dfd48e8",
+    "url": "/fair-weather/static/css/main.c6661700.chunk.css"
   },
   {
-    "revision": "aef8d5a45c979636d8c5",
-    "url": "/fair-weather/static/js/2.efc12ed1.chunk.js"
+    "revision": "1cb0f339840c11eda082",
+    "url": "/fair-weather/static/js/2.96054742.chunk.js"
   },
   {
     "revision": "570d362d673dab785e62d2b8563e1118",
-    "url": "/fair-weather/static/js/2.efc12ed1.chunk.js.LICENSE.txt"
+    "url": "/fair-weather/static/js/2.96054742.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "37817d262d3700ac2743",
-    "url": "/fair-weather/static/js/main.f51ecb65.chunk.js"
+    "revision": "aedfb2f2517e9dfd48e8",
+    "url": "/fair-weather/static/js/main.44da23e5.chunk.js"
   },
   {
     "revision": "9bf22205135eaab3c1d6",
