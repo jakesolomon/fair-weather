@@ -34,6 +34,8 @@ class Map extends Component {
         stroke="#BFBFBF"
         geography={geo}
         fill={colors[parseInt(geo.id)]}
+        onMouseOver={() => this.props.updateMouseOverState(geo.id)}
+        onMouseLeave={() => this.props.updateMouseOverState(null)}
         />)
       }
       </Geographies>
