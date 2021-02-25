@@ -3,6 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import Map from './components/map.js';
+import MouseOver from './components/mouseOver.js';
 
 import stateCoordinates from './data/stateCoordinates.json';
 
@@ -10,12 +11,15 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      loading: true,
       weatherData: [],
-      highlightedStates: [null],
-      mouseOverState: null
+      highlightedStates: [],
+      mouseOverStateTemp: null,
+      mouseOverStateClouds: null
     };
 
     this.updateMouseOverState = this.updateMouseOverState.bind(this);
+    this.finishLoading = this.finishLoading.bind(this);
   }
 
   componentDidMount() {
@@ -35,17 +39,23 @@ class App extends Component {
             highlightedStates: this.state.highlightedStates.concat(state.val)
           });
       })
-      .then(nothing => console.log(this.state.weatherData))
       .catch(error => console.error(error));
     });
+    setTimeout(this.finishLoading, 4000);
+  }
+
+  finishLoading() {
+    this.setState({ loading: false });
   }
 
   updateMouseOverState(id) {
     this.state.weatherData.forEach(state => {
       if (state.id == id) {
-        this.setState({mouseOverState: state});
+        this.setState({mouseOverStateTemp: state.temp});
+        this.setState({mouseOverStateClouds: state.clouds});
       } else if (id == null) {
-        this.setState({mouseOverState: null});
+        this.setState({mouseOverStateTemp: null});
+        this.setState({mouseOverStateClouds: null});
       }
     });
   }
@@ -54,22 +64,20 @@ class App extends Component {
     return (
       <div className="App">
         <div className="text">
+          <MouseOver
+            mouseOverStateTemp={this.state.mouseOverStateTemp}
+            mouseOverStateClouds={this.state.mouseOverStateClouds}
+          />
           <h1>The Good Weather Map</h1>
           <p>A map of the US that shows which states are currently
           in the 70's with clear skies.<br/><br/>
           The Good Weather Map uses the <a href="https://openweathermap.org/">
           OpenWeather API</a> to find what states are nice right now, and highlights them
           them using <a href="https://www.react-simple-maps.io/">React Simple Maps</a>.</p>
-          {this.state.highlightedStates[0] == null && this.state.mouseOverState == null &&
+          {!this.state.highlightedStates[0] && !this.state.loading &&
             <p style={{margin: "0px", fontSize: "1rem"}}>
-            Looks like there's no decent weather anywhere. <br/>
+            Looks like there's no decent weather anywhere. &#128530;<br/>
             Come back later, maybe Texas will light up or something.
-            </p>
-          }
-          {this.state.mouseOverState != null &&
-            <p style={{margin: "0px", fontSize: "1rem"}}>
-            Temperature: {this.state.mouseOverState.temp}°F <br/>
-            Cloud Cover: {this.state.mouseOverState.clouds}%
             </p>
           }
         </div>
