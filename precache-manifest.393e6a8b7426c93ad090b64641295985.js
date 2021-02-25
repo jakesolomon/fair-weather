@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "89cbe63a16bb2bd8a7370490ea05649c",
+    "revision": "8e1baaf5ecf6c6742cd06b3a30cc75a7",
     "url": "/fair-weather/index.html"
   },
   {
-    "revision": "aedfb2f2517e9dfd48e8",
+    "revision": "564916831989888366af",
     "url": "/fair-weather/static/css/main.c6661700.chunk.css"
   },
   {
-    "revision": "1cb0f339840c11eda082",
-    "url": "/fair-weather/static/js/2.96054742.chunk.js"
+    "revision": "7609132ae1dc2d98b713",
+    "url": "/fair-weather/static/js/2.0ed995e7.chunk.js"
   },
   {
     "revision": "570d362d673dab785e62d2b8563e1118",
-    "url": "/fair-weather/static/js/2.96054742.chunk.js.LICENSE.txt"
+    "url": "/fair-weather/static/js/2.0ed995e7.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "aedfb2f2517e9dfd48e8",
-    "url": "/fair-weather/static/js/main.44da23e5.chunk.js"
+    "revision": "564916831989888366af",
+    "url": "/fair-weather/static/js/main.0726af24.chunk.js"
   },
   {
     "revision": "9bf22205135eaab3c1d6",
